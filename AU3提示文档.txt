@@ -1,0 +1,14 @@
+#NoTrayIcon      ；脚本执行时不显示托盘图标.
+#RequireAdmin    ;Admin账户运行
+
+$WS_CAPTION,$WS_EX_TOPMOST + $WS_EX_TOOLWINDOW  ；GUI窗口
+
+
+$WS_VSCROLL   ;带有数值滚动条
+$ES_READONLY  ;GUI输入框禁止更改
+
+FileSelectFolder  ;选择文件夹路径，可用于安装目录
+GUICtrlSetData  ;修改控件数据，可用于更改目录后显示路径
+GUICtrlRead ;读取插控信息，搭配路径
+
+/ai /gm2 /InstallPath="' & $txt & '"   ;引号内加函数 双引号后但引号在加&
